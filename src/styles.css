@@ -1,0 +1,38 @@
+.searchbar {
+    margin-top: 40px;
+}
+
+.currentWeather {
+    width: auto;
+    border-radius: 6px;
+    box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 30%);
+    color: antiquewhite;
+    background-color: #393939;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.data-1 {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.data-2 {
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.data-3 {
+    font-size: 20px;
+    font-weight: 800;
+}
