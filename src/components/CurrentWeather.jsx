@@ -12,10 +12,11 @@ export const CurrentWeather = () => {
                         className='weather-icon'
                         src='01d.png'
                     />
+                    <span className='data-2'>Cloudy</span>
                 </div>
                 <div className='col-6 p-3'>
                     <p className='data-1'>26°C</p>
-                    <p className='data-2'>Cloudy</p>
+                    <span className='data-2'>19:50</span>
                 </div>
 
                 <div className='col-4'>
