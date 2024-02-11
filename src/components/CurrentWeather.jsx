@@ -4,7 +4,9 @@ export const CurrentWeather = ({ data }) => {
         <div className='currentWeather container text-center'>
             <div className='row gy-2 align-items-center'>
                 <div className='col-12'>
-                    <span className='title'>{data.city}</span>
+                    <span className='title'>
+                        {data.city.split(',').slice(0, 1)}
+                    </span>
                 </div>
 
                 <div className='col-6'>
@@ -12,9 +14,11 @@ export const CurrentWeather = ({ data }) => {
                         <img
                             alt='weather icon'
                             className='weather-icon'
-                            src='01d.png'
+                            src={`${data.weather[0].icon}.png`}
                         />
-                        <span className='data-2'>{data.weather[0].main}</span>
+                        <span className='description'>
+                            {data.weather[0].main}
+                        </span>
                     </div>
                 </div>
                 <div className='col-6 p-3'>
@@ -34,7 +38,7 @@ export const CurrentWeather = ({ data }) => {
 
                 <div className='col-4'>
                     <span className='subtitle'>Feels like</span>
-                    <p className='data-3'>{data.main.feels_like}</p>
+                    <p className='data-3'>{data.main.feels_like.toFixed(1)}</p>
                 </div>
 
                 <div className='col-4'>
@@ -49,9 +53,7 @@ export const CurrentWeather = ({ data }) => {
 
                 <div className='col-4'>
                     <span className='subtitle'>Wind</span>
-                    <p className='data-3'>
-                        {data.wind.speed}, {data.wind.deg}°
-                    </p>
+                    <p className='data-3'>{data.wind.speed} mts/s</p>
                 </div>
 
                 <div className='col-4'>
