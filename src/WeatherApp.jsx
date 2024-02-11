@@ -37,10 +37,10 @@ export const WeatherApp = () => {
 
                 {!loading && (
                     <div className='row'>
-                        <div className='col-12 col-lg-5'>
+                        <div className='col-12 col-md-5'>
                             <CurrentWeather data={current} />
                         </div>
-                        <div className='col-12 col-lg-7'>
+                        <div className='col-12 col-md-7'>
                             <Forecast />
                         </div>
                     </div>

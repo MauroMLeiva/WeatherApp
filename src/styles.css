@@ -61,14 +61,8 @@
     font-weight: 800;
 }
 
-.description {
-    margin-top: -30px;
-    font-size: 36px;
-    font-weight: 500;
-    font-style: italic;
-}
-
 .weather-icon {
     max-width: 200px;
+    max-height: 200px;
     width: 100%;
 }
