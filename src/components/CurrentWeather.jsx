@@ -8,29 +8,29 @@ export const CurrentWeather = ({ data }) => {
                     </span>
                 </div>
 
-                <div className='col-6'>
-                    <img
-                        alt='weather icon'
-                        className='weather-icon'
-                        src={`${data.weather[0].icon}.png`}
-                    />
+                <div className='col-12'>
+                    <div className='center'>
+                        <img
+                            alt='weather icon'
+                            className='weather-icon'
+                            src={`${data.weather[0].icon}.png`}
+                        />
+
+                        <p className='data-1'>{data.main.temp.toFixed(1)}°</p>
+                    </div>
                 </div>
 
-                <div className='col-6'>
-                    <p className='data-1'>{data.main.temp.toFixed(1)}°</p>
-                </div>
+                <div className='col-12'>
+                    <div className='center'>
+                        <span className='data-2'>{data.weather[0].main}</span>
 
-                <div className='col-6'>
-                    <span className='data-2'>{data.weather[0].main}</span>
-                </div>
-
-                <div className='col-6'>
-                    <span className='data-2'>
-                        {new Date(data.dt * 1000).toLocaleTimeString([], {
-                            hour: '2-digit',
-                            minute: '2-digit',
-                        })}
-                    </span>
+                        <span className='data-2'>
+                            {new Date(data.dt * 1000).toLocaleTimeString([], {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                            })}
+                        </span>
+                    </div>
                 </div>
 
                 <div className='col-1'></div>
