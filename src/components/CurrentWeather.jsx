@@ -34,34 +34,25 @@ export const CurrentWeather = ({ data }) => {
                     </span>
                 </div>
 
-                <div className='col-4'>
-                    <span className='subtitle'>Feels like</span>
-                    <p className='data-3'>{data.main.feels_like.toFixed(1)}°</p>
+                <div className='col-1'></div>
+
+                <div className='col-5 align-self-start p-3'>
+                    <p className='subtitle'>Feels like</p>
+                    <p className='subtitle'>Humidity</p>
+                    <p className='subtitle'>Pressure</p>
+                    <p className='subtitle'>Wind</p>
+                    <p className='subtitle'>Visibility</p>
                 </div>
 
-                <div className='col-4'>
-                    <span className='subtitle'>Humidity</span>
+                <div className='col-5 align-self-end p-3'>
                     <p className='data-3'>{data.main.humidity} %</p>
-                </div>
-
-                <div className='col-4'>
-                    <span className='subtitle'>Pressure</span>
+                    <p className='data-3'>{data.main.feels_like.toFixed(1)}°</p>
                     <p className='data-3'>{data.main.pressure} hPa</p>
-                </div>
-
-                <div className='col-2'></div>
-
-                <div className='col-4'>
-                    <span className='subtitle'>Wind</span>
                     <p className='data-3'>{data.wind.speed} mts/s</p>
-                </div>
-
-                <div className='col-4'>
-                    <span className='subtitle'>Visibility</span>
                     <p className='data-3'>{data.visibility} mts</p>
                 </div>
 
-                <div className='col-2'></div>
+                <div className='col-1'></div>
             </div>
         </div>
     );
