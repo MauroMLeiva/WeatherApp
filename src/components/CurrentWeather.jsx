@@ -44,8 +44,8 @@ export const CurrentWeather = ({ data }) => {
                 </div>
 
                 <div className='col-5 align-self-end p-3'>
-                    <p className='data-3'>{data.main.humidity} %</p>
                     <p className='data-3'>{data.main.feels_like.toFixed(1)}°</p>
+                    <p className='data-3'>{data.main.humidity} %</p>
                     <p className='data-3'>{data.main.pressure} hPa</p>
                     <p className='data-3'>{data.wind.speed} mts/s</p>
                     <p className='data-3'>{data.visibility} mts</p>
