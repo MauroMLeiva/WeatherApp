@@ -1,5 +1,5 @@
 import { CurrentWeather, Forecast, SearchBar } from './components';
-import { CURRENT_WEATHER_URL, FORECAST_URL } from './api/OpenWeatherMap';
+import { CURRENT_WEATHER_URL, FORECAST_URL } from './api/Weather';
 import { useState } from 'react';
 
 export const WeatherApp = () => {
@@ -19,7 +19,7 @@ export const WeatherApp = () => {
             setCurrent({ city: location.label, ...currentWeatherResult });
 
             const forecastRes = await fetch(
-                `${FORECAST_URL}lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`
+                `${FORECAST_URL}&latitude=${latitude}&longitude=${longitude}`
             );
             const forecastResult = await forecastRes.json();
             setForecast({ city: location.label, forecastResult });
@@ -41,7 +41,7 @@ export const WeatherApp = () => {
                             <CurrentWeather data={current} />
                         </div>
                         <div className='col-12 col-md-7'>
-                            <Forecast />
+                            <Forecast data={forecast} />
                         </div>
                     </div>
                 )}

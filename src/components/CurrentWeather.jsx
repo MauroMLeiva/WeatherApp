@@ -1,5 +1,4 @@
 export const CurrentWeather = ({ data }) => {
-    console.log(data);
     return (
         <div className='currentWeather container text-center'>
             <div className='row gy-2 align-items-center'>
