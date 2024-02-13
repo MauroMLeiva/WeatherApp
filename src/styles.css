@@ -1,5 +1,5 @@
 body {
-    background-color: #686868;
+    background-color: #393939;
 }
 
 .searchbar {
@@ -11,29 +11,32 @@ body {
     border-radius: 6px;
     box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 30%);
     color: antiquewhite;
-    background-color: #393939;
-    /* background-image: url('IRtMAD.gif');
-    background-size: cover; */
+    background-color: #878787;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .forecast {
     margin-top: 12px;
+    margin-bottom: 20px;
 }
 
 .accordion {
     --bs-accordion-btn-color: antiquewhite;
-    --bs-accordion-btn-bg: #393939;
-    --bs-accordion-active-bg: #2a2a2a;
+    --bs-accordion-btn-bg: #878787;
+    --bs-accordion-active-bg: #545454;
     --bs-accordion-active-color: antiquewhite;
-    --bs-accordion-bg: #545454;
+    --bs-accordion-bg: #2a2a2a;
     --bs-accordion-color: antiquewhite;
-    --bs-accordion-border-color: #232323;
-    --bs-accordion-btn-focus-border-color: #393939;
+    --bs-accordion-border-color: #a7a7a7;
+    --bs-accordion-btn-focus-border-color: #878787;
     --bs-accordion-btn-focus-box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 30%);
     --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='antiquewhite'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='antiquewhite'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button::after {
+    margin-left: 20px;
 }
 
 .accordion-button {
@@ -80,15 +83,20 @@ body {
     margin-right: 10px;
 }
 
-.temp {
-    margin-right: 10px;
-}
-
-.temp2 {
+.forecast-item {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.forecast-item-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .center {

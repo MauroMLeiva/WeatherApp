@@ -1,4 +1,18 @@
+import { wmoToImage } from '../helpers/wmoToImage';
+
 export const ForecastItem = ({ data, date }) => {
+    const day = new Date(data.time[date]);
+    const weekday = day.getDay();
+    const weekdays = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+    ];
+
     return (
         <div className='accordion-item'>
             <h2 className='accordion-header'>
@@ -10,14 +24,14 @@ export const ForecastItem = ({ data, date }) => {
                     aria-expanded='false'
                     aria-controls={`collapse${data.time[date]}`}
                 >
-                    <div className='temp2'>
-                        <span className='temp'>{data.time[date].slice(5)}</span>
+                    <div className='forecast-item'>
+                        <span>{data.time[date].slice(5)}</span>
                         <img
                             alt='weather icon'
                             className='weather-icon-forecast'
-                            src={`01d.png`}
+                            src={wmoToImage(data.weather_code[date])}
                         />
-                        <span className='temp'>
+                        <span>
                             {data.temperature_2m_max[date]}°/
                             {data.temperature_2m_min[date]}°
                         </span>
@@ -30,9 +44,14 @@ export const ForecastItem = ({ data, date }) => {
                 data-bs-parent='#accordionExample'
             >
                 <div className='accordion-body'>
-                    <strong>
-                        This is the #{data.time[date]} item's accordion body.
-                    </strong>
+                    <div className='forecast-item-content'>
+                        <span>{weekdays[weekday]}</span>
+                        <span>
+                            Precipitation prob.{' '}
+                            {data.precipitation_probability_max[date]}%
+                        </span>
+                        <span>UV index {data.uv_index_max[date]}%</span>
+                    </div>
                 </div>
             </div>
         </div>
