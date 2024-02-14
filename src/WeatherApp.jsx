@@ -1,6 +1,6 @@
-import { CurrentWeather, Forecast, SearchBar } from './components';
-import { CURRENT_WEATHER_URL, FORECAST_URL } from './api/Weather';
 import { useState } from 'react';
+import { CurrentWeather, Forecast, SearchBar } from './components';
+import { getCurrent, getForecast } from './helpers';
 
 export const WeatherApp = () => {
     const [current, setCurrent] = useState(null);
@@ -8,20 +8,11 @@ export const WeatherApp = () => {
     const [loading, setLoading] = useState(true);
 
     const handleSearchChange = async (location) => {
-        const [latitude, longitude] = location.value.split(' ');
-        const api_key = import.meta.env.VITE_WEATHER_API_KEY;
-
         try {
-            const currentWeatherRes = await fetch(
-                `${CURRENT_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`
-            );
-            const currentWeatherResult = await currentWeatherRes.json();
+            const currentWeatherResult = await getCurrent(location);
             setCurrent({ city: location.label, ...currentWeatherResult });
 
-            const forecastRes = await fetch(
-                `${FORECAST_URL}&latitude=${latitude}&longitude=${longitude}`
-            );
-            const forecastResult = await forecastRes.json();
+            const forecastResult = await getForecast(location);
             setForecast({ city: location.label, forecastResult });
 
             setLoading(false);
