@@ -28,6 +28,7 @@ export const CurrentWeather = ({ data }) => {
                             {new Date(data.dt * 1000).toLocaleTimeString([], {
                                 hour: '2-digit',
                                 minute: '2-digit',
+                                hourCycle: 'h24',
                             })}
                         </span>
                     </div>

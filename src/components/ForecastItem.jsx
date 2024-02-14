@@ -37,14 +37,14 @@ export const ForecastItem = ({ data, date }) => {
             >
                 <div className='accordion-body'>
                     <div className='row'>
-                        <div className='col-6 forecast-item-content-l'>
+                        <div className='col-5 forecast-item-content-l'>
                             <p>{data.time[date]}</p>
                             <p>
-                                Precipitations{' '}
+                                Precip.{' '}
                                 {data.precipitation_probability_max[date]}%
                             </p>
                         </div>
-                        <div className='col-6 forecast-item-content-r'>
+                        <div className='col-7 forecast-item-content-r'>
                             <p>{wmoToText(data.weather_code[date])}</p>
                             <p>UV index {data.uv_index_max[date]}%</p>
                         </div>
