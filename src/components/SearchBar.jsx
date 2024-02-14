@@ -33,6 +33,15 @@ export const SearchBar = ({ onSearchChange }) => {
     return (
         <div className='searchbar'>
             <AsyncPaginate
+                theme={(theme) => ({
+                    ...theme,
+                    borderRadius: 6,
+                    colors: {
+                        ...theme.colors,
+                        primary25: '#a7a7a7',
+                        primary: '#878787',
+                    },
+                })}
                 placeholder='Enter city name'
                 debounceTimeout={800}
                 value={search}

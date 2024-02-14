@@ -1,17 +1,9 @@
-import { wmoToImage } from '../helpers/wmoToImage';
+import { wmoToImage, wmoToText } from '../helpers/wmoToData';
 
 export const ForecastItem = ({ data, date }) => {
     const day = new Date(data.time[date]);
     const weekday = day.getDay();
-    const weekdays = [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday',
-    ];
+    const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     return (
         <div className='accordion-item'>
@@ -25,13 +17,13 @@ export const ForecastItem = ({ data, date }) => {
                     aria-controls={`collapse${data.time[date]}`}
                 >
                     <div className='forecast-item'>
-                        <span>{data.time[date].slice(5)}</span>
-                        <img
-                            alt='weather icon'
-                            className='weather-icon-forecast'
-                            src={wmoToImage(data.weather_code[date])}
-                        />
+                        <span>{weekdays[weekday]}</span>
                         <span>
+                            <img
+                                alt='weather icon'
+                                className='weather-icon-forecast'
+                                src={wmoToImage(data.weather_code[date])}
+                            />
                             {data.temperature_2m_max[date]}°/
                             {data.temperature_2m_min[date]}°
                         </span>
@@ -44,13 +36,18 @@ export const ForecastItem = ({ data, date }) => {
                 data-bs-parent='#accordionExample'
             >
                 <div className='accordion-body'>
-                    <div className='forecast-item-content'>
-                        <span>{weekdays[weekday]}</span>
-                        <span>
-                            Precipitation prob.{' '}
-                            {data.precipitation_probability_max[date]}%
-                        </span>
-                        <span>UV index {data.uv_index_max[date]}%</span>
+                    <div className='row'>
+                        <div className='col-6 forecast-item-content-l'>
+                            <p>{data.time[date]}</p>
+                            <p>
+                                Precipitations{' '}
+                                {data.precipitation_probability_max[date]}%
+                            </p>
+                        </div>
+                        <div className='col-6 forecast-item-content-r'>
+                            <p>{wmoToText(data.weather_code[date])}</p>
+                            <p>UV index {data.uv_index_max[date]}%</p>
+                        </div>
                     </div>
                 </div>
             </div>

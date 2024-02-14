@@ -90,11 +90,14 @@ body {
     align-items: center;
 }
 
-.forecast-item-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.forecast-item-content-l {
+    text-align: start;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.forecast-item-content-r {
+    text-align: end;
     font-size: 18px;
     font-weight: 500;
 }
