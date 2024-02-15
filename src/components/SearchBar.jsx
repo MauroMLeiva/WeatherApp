@@ -13,7 +13,7 @@ export const SearchBar = ({ onSearchChange }) => {
     const loadOptions = async (input) => {
         try {
             const response = await fetch(
-                `${GEOurl}?namePrefix=${input}&minPopulation=5000`,
+                `${GEOurl}?namePrefix=${input}&minPopulation=5000&sort=-population`,
                 GEOoptions
             );
             const result = await response.json();

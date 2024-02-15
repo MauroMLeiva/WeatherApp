@@ -1,8 +1,6 @@
-import { useState } from 'react';
-
 export const CurrentWeather = ({ data, favs, setFavs }) => {
     const cityName = data.city.split(',').slice(0, 1);
-    const coords = `${data.coord.lat.toString()} ${data.coord.lon.toString()}`;
+    const coords = `${data.coord.lat.toString()} ${data.coord.lon.toString()} ${cityName}`;
 
     const isFav = favs.includes(coords);
 
@@ -26,7 +24,10 @@ export const CurrentWeather = ({ data, favs, setFavs }) => {
                     <button
                         onClick={handleToggleFavorite}
                         type='button'
-                        className='btn btn-outline-dark btn-lg'
+                        className={
+                            'btn btn-lg ' +
+                            (isFav ? 'btn-dark' : 'btn-outline-dark')
+                        }
                         title='Favorite'
                     >
                         {isFav ? (
