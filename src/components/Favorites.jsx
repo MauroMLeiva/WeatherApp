@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { FavoriteItem } from './FavoriteItem';
 
 export const Favorites = ({ favs, setFavs }) => {

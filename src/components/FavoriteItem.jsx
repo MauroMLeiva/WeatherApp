@@ -22,13 +22,13 @@ export const FavoriteItem = ({ coords, setFavs }) => {
     };
 
     return (
-        <div className='row container favorite-item'>
+        <div className='row favorite-item'>
             <div className='col-auto favorite-item-btn'>
                 <button
                     onClick={handleRemoveFavorite}
                     type='button'
                     className='btn btn-outline-dark btn-lg'
-                    title='Favorite'
+                    title='Remove from favorite'
                 >
                     <i className='bi-star-fill'></i>
                 </button>
