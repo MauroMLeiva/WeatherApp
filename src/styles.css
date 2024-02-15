@@ -86,6 +86,11 @@ body {
     font-weight: 700;
 }
 
+.fav-title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
 .subtitle {
     font-size: 20px;
     font-weight: 400;
@@ -107,6 +112,12 @@ body {
     font-size: 20px;
     font-weight: 800;
     text-align: end;
+}
+
+.fav-data {
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
 }
 
 .weather-icon {
@@ -145,4 +156,22 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    .fav-title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .fav-data {
+        font-size: 20px;
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    .favorite-item-btn {
+        margin-left: 0px;
+        margin-top: 25px;
+    }
 }

@@ -37,9 +37,9 @@ export const FavoriteItem = ({ coords, setFavs }) => {
             </div>
 
             <div className='col center'>
-                <span className='title'>{cityName}</span>
+                <span className='fav-title'>{cityName}</span>
                 <img alt='weather icon' src={`${data?.weather[0].icon}.png`} />
-                <span className='data-2'>{data?.main.temp.toFixed(1)}°</span>
+                <span className='fav-data'>{data?.main.temp.toFixed(1)}°</span>
             </div>
         </div>
     );
