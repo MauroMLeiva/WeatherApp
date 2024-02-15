@@ -44,6 +44,10 @@ body {
     margin-bottom: 20px;
 }
 
+.favorite-item-btn {
+    margin-top: 25px;
+}
+
 .forecast {
     margin-top: 12px;
     margin-bottom: 20px;
