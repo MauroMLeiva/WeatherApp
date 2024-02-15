@@ -1,11 +1,40 @@
-export const CurrentWeather = ({ data }) => {
+import { useState } from 'react';
+
+export const CurrentWeather = ({ data, favs, setFavs }) => {
+    const cityName = data.city.split(',').slice(0, 1);
+    const coords = `${data.coord.lat.toString()} ${data.coord.lon.toString()}`;
+
+    const isFav = favs.includes(coords);
+
+    const handleToggleFavorite = () => {
+        if (!isFav) {
+            const newFavs = [...favs, coords];
+            setFavs(newFavs);
+            localStorage.setItem('favorites', JSON.stringify(newFavs));
+        } else {
+            const newFavs = favs.filter((city) => city != coords);
+            setFavs(newFavs);
+            localStorage.setItem('favorites', JSON.stringify(newFavs));
+        }
+    };
+
     return (
         <div className='currentWeather container text-center'>
             <div className='row gy-2 align-items-center'>
-                <div className='col-12'>
-                    <span className='title'>
-                        {data.city.split(',').slice(0, 1)}
-                    </span>
+                <div className='col-12 center'>
+                    <span className='title'>{cityName}</span>
+                    <button
+                        onClick={handleToggleFavorite}
+                        type='button'
+                        className='btn btn-outline-dark btn-lg'
+                        title='Favorite'
+                    >
+                        {isFav ? (
+                            <i className='bi-star-fill'></i>
+                        ) : (
+                            <i className='bi-star'></i>
+                        )}
+                    </button>
                 </div>
 
                 <div className='col-12'>

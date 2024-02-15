@@ -16,6 +16,34 @@ body {
     margin-bottom: 20px;
 }
 
+.favorites-empty {
+    border-radius: 6px;
+    border: dashed;
+    box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 30%);
+    color: antiquewhite;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.favorites-empty-text {
+    min-height: 80px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.favorite-item {
+    border-radius: 6px;
+    box-shadow: 0px 0px 20px 6px rgb(0 0 0 / 30%);
+    color: antiquewhite;
+    background-color: #878787;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .forecast {
     margin-top: 12px;
     margin-bottom: 20px;

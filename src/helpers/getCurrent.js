@@ -1,9 +1,7 @@
 import { CURRENT_WEATHER_URL } from '../api/Weather';
 
-export const getCurrent = async (location) => {
+export const getCurrent = async (latitude, longitude) => {
     const api_key = import.meta.env.VITE_WEATHER_API_KEY;
-
-    const [latitude, longitude] = location.value.split(' ');
 
     try {
         const currentWeatherRes = await fetch(
