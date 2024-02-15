@@ -7,3 +7,5 @@ You can add and remove different cities to your persistent favorite list, to kee
 ### Installation
 
 After cloning the repository, run `yarn` to install neccesary dependencies. You can then run `yarn dev` to run the app locally.
+
+There is also a live version running on https://theweatherforecastapp.netlify.app
